@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus X Connect</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/?size=512w&id=ehi2IAsacOzK&format=png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f2ef;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #f97d3a;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            width: 60%;
+            max-width: 400px;
+            margin-right: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border: 1px solid #0077b5;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #f97d3a;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005a93;
+        }
+
+        .recommendations {
+            text-align: center;
+        }
+
+        .recommendation-card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recommendation-card:hover {
+            transform: scale(1.05);
+        }
+
+        .recommendation-card h3 {
+            margin-top: 0;
+            color: #0c0d0d;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .recommendation-card p {
+            margin: 10px 0 0;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+        }
+
+        .recommendation-card a {
+            text-decoration: none;
+            color: #0077b5;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .recommendation-card a:hover {
+            color: #005a93;
+        }
+
+        .footer {
+            background-color: #f3f2ef;
+            padding: 20px;
+            text-align: center;
+            color: #555;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: #0077b5;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #005a93;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">NexusXConnect</div>
+    </div>
+
+    <div class="container">
+        <h1>Alumni Recommendations</h1>
+        <form action="/recommend" method="post">
+            <input type="text" id="user_name" name="user_name" placeholder="Enter Your Name">
+            <input type="submit" value="Get Recommendations">
+        </form>
+
+        {% if error_message %}
+        <div class="error-message">
+            <p>{{ error_message }}</p>
+        </div>
+        {% endif %}
+
+        {% if recommendations %}
+        <div class="recommendations">
+            <h2>Recommended Alumni:</h2>
+            {% for user, linkedin in recommendations %}
+            <div class="recommendation-card">
+                <h3>{{ user }}</h3>
+                <p><a href="{{ linkedin }}" target="_blank">LinkedIn Profile</a></p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Nexus | <a href="#">About</a> | <a href="#">Contact</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+</body>
+</html>
