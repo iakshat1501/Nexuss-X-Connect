@@ -74,7 +74,7 @@ Smart India Hackathon 2024 - Finalist
 ### ▶️ Run Locally
 
 ```bash
-git clone https://github.com/your-username/Nexuss-X-Connect.git
+git clone https://github.com/iakshat1501/Nexuss-X-Connect.git
 cd Nexuss-X-Connect
 python app.py
 
