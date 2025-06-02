@@ -49,33 +49,27 @@ Nexuss-X-Connect/
 - Flask: `pip install flask`
 - Scikit-learn, Pandas: `pip install -r requirements.txt` *(Create one if not present)*
 
-📊 Dataset Preview
+## 📊 Dataset Preview
 The dataset updated_linkedin.csv includes:
 
-Name
-
-Skills
-
-Experience
-
-Industry
-
-LinkedIn URL
+- Name
+- Skills
+- Experience
+- Industry
+- LinkedIn URL
 
 Used to train and test the recommendation engine.
 
-✨ Future Enhancements
-Add user authentication & dashboards
+## ✨ Future Enhancements
 
-Real-time chat or appointment scheduling
+- Add user authentication & dashboards
+- Real-time chat or appointment scheduling
+- Enhanced NLP-based profile matching
+- Deployment to cloud platforms (AWS/GCP)
 
-Enhanced NLP-based profile matching
-
-Deployment to cloud platforms (AWS/GCP)
-
-👨‍💻 Author
+## 👨‍💻 Author
 Akshat Garg
-Smart India Hackathon 2022 - Finalist
+Smart India Hackathon 2024 - Finalist
 
 ### ▶️ Run Locally
 
