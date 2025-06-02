@@ -73,7 +73,9 @@ Enhanced NLP-based profile matching
 
 Deployment to cloud platforms (AWS/GCP)
 
-
+👨‍💻 Author
+Akshat Garg
+Smart India Hackathon 2022 - Finalist
 
 ### ▶️ Run Locally
 
@@ -82,6 +84,4 @@ git clone https://github.com/your-username/Nexuss-X-Connect.git
 cd Nexuss-X-Connect
 python app.py
 
-👨‍💻 Author
-Akshat Garg
-Smart India Hackathon 2022 - Finalist
+
