@@ -69,7 +69,7 @@ Used to train and test the recommendation engine.
 
 ## 👨‍💻 Author
 Akshat Garg
-Smart India Hackathon 2024 - Finalist
+Smart India Hackathon 2024 
 
 ### ▶️ Run Locally
 
